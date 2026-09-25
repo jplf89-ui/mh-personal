@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marcelo Hathy — Personal Trainer</title>
+<meta name="description" content="Marcelo Hathy, personal trainer (CREF 45.150-G). Consultoria online para Brasil, EUA e Canadá e treino presencial em Curitiba. Método Hathy: processo, não motivação.">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Big+Shoulders+Display:wght@700;800;900&family=Michroma&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marcelo Hathy — Personal Trainer">
+<meta property="og:description" content="Eu não ensino motivação. Ensino processo. Consultoria online (Brasil, EUA e Canadá) e treino presencial em Curitiba.">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<style>
+:root{
+  --rubber:#0b0b0c;
+  --rubber-2:#131315;
+  --rubber-3:#1b1b1e;
+  --rubber-4:#26262a;
+  --line:rgba(236,232,224,.12);
+  --line-2:rgba(236,232,224,.22);
+  --bone:#ece8e0;
+  --bone-2:#bdb9b1;
+  --bone-3:#8f8b84;
+  --steel:#c9ccd1;
+  --steel-2:#8a8e94;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+  --f-display:"Big Shoulders Display",system-ui,sans-serif;
+  --f-stamp:"Michroma",system-ui,sans-serif;
+  --f-body:"Archivo",system-ui,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  --max:1320px;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;scroll-behavior:smooth;scrollbar-color:var(--rubber-4) var(--rubber)}
+body{margin:0;background:var(--rubber);color:var(--bone);font:400 1.0625rem/1.6 var(--f-body);font-stretch:96%;-webkit-font-smoothing:antialiased;overflow-x:clip}
+::selection{background:var(--bone);color:var(--rubber)}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+button,a,[role=button],label.chip{touch-action:manipulation}
+button,.btn,.chip,.seg label,.ticks button{user-select:none;-webkit-user-select:none}
+:focus-visible{outline:2px solid var(--bone);outline-offset:3px;border-radius:2px}
+.wrap{width:min(100% - 2*var(--gutter),var(--max));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- type ---------- */
+.display{font-family:var(--f-display);font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.01em;margin:0;text-wrap:balance;overflow-wrap:break-word}
+.stamp{font-family:var(--f-stamp);font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-2)}
+h2.display{font-size:clamp(2.75rem,6.2vw,5.25rem)}
+p{margin:0;text-wrap:pretty}
+.lede{font-size:clamp(1.0625rem,1.4vw,1.25rem);color:var(--bone-2);max-width:40ch}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.65em;min-height:52px;padding:0 1.35em;border-radius:6px;font:600 1rem/1 var(--f-body);font-stretch:108%;letter-spacing:.01em;text-decoration:none;border:1px solid transparent;transition:transform 140ms var(--ease-out),background-color 200ms ease,border-color 200ms ease,color 200ms ease;cursor:pointer}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn--solid{background:var(--bone);color:var(--rubber)}
+.btn--line{border-color:var(--line-2);color:var(--bone)}
+.link-arrow{display:inline-flex;align-items:center;gap:.5em;font-weight:600;text-decoration:none;color:var(--bone);min-height:44px}
+.link-arrow{transition:transform 140ms var(--ease-out)}
+.link-arrow:active{transform:scale(.97)}
+.link-arrow svg{width:18px;height:18px;transition:transform 200ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .btn--solid:hover{background:#fff}
+  .btn--line:hover{border-color:var(--bone);background:rgba(236,232,224,.04)}
+  .link-arrow:hover svg{transform:translateX(4px)}
+  .nav__links a:hover{color:var(--bone)}
+}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:20;padding-top:env(safe-area-inset-top,0px);transition:background-color 240ms ease,border-color 240ms ease;border-bottom:1px solid transparent}
+.nav.is-solid{background:rgba(11,11,12,.94);border-bottom-color:var(--line)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:26px;height:auto;color:var(--bone)}
+.brand span{font-family:var(--f-stamp);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase}
+.nav__links{display:flex;gap:28px;font-size:.9375rem;color:var(--bone-2)}
+.nav__links a{text-decoration:none;transition:color 200ms ease}
+.nav .btn{min-height:42px;padding:0 1em;font-size:.9375rem}
+@media (max-width:860px){.nav__links{display:none}}
+@media (max-width:420px){.brand span{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;padding:120px 0 72px;overflow:clip}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero h1{font-size:clamp(3.4rem,8.4vw,6rem)}
+.hero h1 .l{display:block;overflow:clip;padding:.14em 0 .04em;margin-top:-.14em}
+.hero h1 .l>span{display:block}
+.hero h1 .l1{color:var(--steel-2)}
+.hero .lede{margin-top:28px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:36px}
+.hero__meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin:56px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
+.hero__meta div{display:grid;gap:4px}
+.hero__meta dt{font-family:var(--f-stamp);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-3)}
+.hero__meta dd{margin:0;font-weight:500;font-size:.9375rem}
+.plate-wrap{position:relative;aspect-ratio:1;width:min(100%,560px);justify-self:end}
+.plate-wrap::after{content:"";position:absolute;left:12%;right:12%;bottom:-6%;height:10%;background:radial-gradient(closest-side,rgba(0,0,0,.85),transparent);z-index:-1}
+.plate{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.p-spin{will-change:transform;transform-origin:50% 50%}
+.p-spin svg{width:100%;height:100%;overflow:visible}
+@media (max-width:900px){
+  .hero{padding-top:96px;align-items:start}
+  .hero__grid{grid-template-columns:1fr}
+  .p-spin .num{display:none}
+  .plate-wrap{position:absolute;top:64px;right:-26vw;width:min(66vw,340px);z-index:0;opacity:.62}
+  .hero__grid>div:first-child{position:relative;z-index:1}
+  .hero h1 .l1{color:#9a9ea4}
+  .hero__meta{margin-top:40px}
+}
+
+/* hero load choreography — content is visible without JS/animation */
+@media (prefers-reduced-motion:no-preference){
+  .js .hero h1 .l>span{animation:rise 900ms var(--ease-out) both}
+  .js .hero h1 .l2>span{animation-delay:90ms}
+  .js .hero .lede,.js .hero__cta,.js .hero__meta{animation:fade 700ms var(--ease-out) both}
+  .js .hero .lede{animation-delay:260ms}
+  .js .hero__cta{animation-delay:320ms}
+  .js .hero__meta{animation-delay:380ms}
+  .js .plate-wrap{animation:roll 1300ms var(--ease-out) both}
+}
+@keyframes rise{from{transform:translateY(105%)}}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}}
+@keyframes roll{from{transform:translateX(34%) rotate(120deg);opacity:0}40%{opacity:1}}
+
+
+/* ---------- section scaffold ---------- */
+section{position:relative}
+.sec{padding:clamp(80px,10vw,136px) 0}
+.sec__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px 64px;align-items:end;margin-bottom:clamp(40px,6vw,72px)}
+.sec__head .lede{justify-self:start}
+@media (max-width:860px){.sec__head{grid-template-columns:1fr}}
+.sec__head--stack{grid-template-columns:1fr;gap:20px}
+.sec__head--stack .lede{max-width:48ch}
+
+/* ---------- método (signature) ---------- */
+.metodo{background:var(--rubber-2)}
+.metodo::before,.metodo::after{content:"";position:absolute;left:0;right:0;height:9px;z-index:2;background:repeating-linear-gradient(45deg,rgba(236,232,224,.16) 0 1px,transparent 1px 5px),repeating-linear-gradient(-45deg,rgba(236,232,224,.16) 0 1px,transparent 1px 5px);pointer-events:none}
+.metodo::before{top:0}.metodo::after{bottom:0}
+.metodo__track{height:calc(100svh + 5 * 62svh)}
+.metodo__pin{position:sticky;top:0;height:100svh;display:grid;align-items:center;overflow:clip}
+.metodo__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px);align-items:center}
+.metodo__intro{margin-top:16px;color:var(--bone-2);max-width:34ch}
+.step{margin-top:clamp(28px,5vh,56px);min-height:12em}
+.step__count{font-family:var(--f-stamp);font-size:.75rem;letter-spacing:.2em;color:var(--bone-3);font-variant-numeric:tabular-nums}
+.step__count b{color:var(--bone);font-weight:400}
+.step__body{transition:opacity 260ms var(--ease-out),filter 260ms var(--ease-out),transform 260ms var(--ease-out)}
+.step__body.is-swapping{opacity:0;filter:blur(3px);transform:translateY(6px)}
+.step h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2rem,3.6vw,3rem);line-height:.95;margin:.35em 0 .4em;letter-spacing:.005em}
+.step p{color:var(--bone-2);max-width:38ch}
+.ticks{display:flex;gap:6px;margin-top:28px}
+.ticks button{appearance:none;border:0;background:none;padding:14px 0;cursor:pointer;width:44px}
+.ticks button i{display:block;height:8px;background:var(--rubber-4);transform:skewX(-28deg);transition:background-color 240ms ease}
+.ticks button.is-on i{background:var(--bone)}
+.ticks button.is-current i{background:var(--bone);box-shadow:0 0 0 1px var(--bone)}
+.bar{position:relative}
+.bar svg{width:100%;height:auto;overflow:visible}
+.bar .pl{transition:transform 820ms var(--ease-out),opacity 360ms ease;opacity:0}
+.bar .pl.on{opacity:1;transform:translateX(0)!important}
+.bar .collar{transition:transform 820ms var(--ease-out)}
+.readout{display:flex;align-items:baseline;justify-content:flex-end;gap:14px;margin-top:8px;padding-right:4%}
+.readout .stamp{color:var(--bone-3)}
+.readout output{font-family:var(--f-display);font-weight:800;font-size:clamp(3rem,6vw,5rem);line-height:1;font-variant-numeric:tabular-nums;min-width:3.2ch;text-align:right}
+.readout small{font-family:var(--f-display);font-weight:700;font-size:clamp(1.25rem,2vw,1.75rem);color:var(--bone-2)}
+.steps-static{display:none}
+@media (max-width:900px){
+  .metodo__grid{grid-template-columns:1fr;gap:8px}
+  .metodo__pin{align-items:start;padding-top:84px}
+  .metodo__intro{display:none}
+  .step{margin-top:18px;min-height:12.5em}
+  .bar{order:0;margin-inline:-4%}
+  .readout{margin-top:-4px}
+  .readout output{font-size:2.75rem}
+}
+@media (max-width:900px) and (max-height:700px){.step p{font-size:.975rem}.metodo__pin{padding-top:76px}}
+/* static (no JS / reduced motion) */
+.static .metodo__track{height:auto}
+.static .metodo__pin{position:relative;height:auto;padding:clamp(96px,12vw,160px) 0}
+.static .step,.static .ticks{display:none}
+.static .steps-static{display:grid;gap:28px;margin:40px 0 0;padding:0;list-style:none;counter-reset:s}
+.static .steps-static li{border-top:1px solid var(--line);padding-top:16px}
+.static .steps-static h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.75rem;margin:0 0 .3em}
+.static .steps-static p{color:var(--bone-2)}
+.static .bar .pl{opacity:1;transform:none!important}
+
+/* ---------- duas vias ---------- */
+.vias__grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.via{padding:clamp(28px,4vw,48px) 0 0;display:grid;align-content:start;gap:28px}
+.via+.via{border-left:1px solid var(--line);padding-left:clamp(24px,4vw,56px)}
+.via:first-child{padding-right:clamp(24px,4vw,56px)}
+.via__photo{position:relative;aspect-ratio:5/4;overflow:clip;border-radius:4px;background:var(--rubber-3)}
+.via__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transition:transform 1400ms var(--ease-out)}
+.reveal{clip-path:inset(0 0 0 0)}
+.js .reveal.pending{clip-path:inset(0 0 100% 0)}
+.js .reveal.pending img{transform:scale(1.12)}
+.js .reveal{transition:clip-path 1100ms var(--ease-in-out)}
+.via h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2.25rem,4vw,3.5rem);line-height:.92;margin:0 0 14px}
+.via p{color:var(--bone-2);max-width:44ch}
+.gyms{list-style:none;margin:20px 0 0;padding:0;display:grid}
+.gyms li{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line)}
+.gyms li:last-child{border-bottom:1px solid var(--line)}
+.gyms b{font-weight:600}
+.gyms span{font-family:var(--f-stamp);font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-3);white-space:nowrap}
+.photo-note{position:absolute;left:10px;bottom:10px;font-family:var(--f-stamp);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;background:rgba(11,11,12,.8);padding:6px 9px;border-radius:3px;color:var(--bone-2)}
+@media (max-width:860px){
+  .vias__grid{grid-template-columns:1fr}
+  .via+.via{border-left:0;padding-left:0;border-top:1px solid var(--line);margin-top:56px}
+  .via:first-child{padding-right:0}
+}
+
+/* ---------- focos ---------- */
+.focos{border-top:1px solid var(--line)}
+.focos__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.focos__list li{padding:22px 20px 26px 0;border-right:1px solid var(--line);display:grid;gap:8px}
+.focos__list li+li{padding-left:20px}
+.focos__list li:last-child{border-right:0}
+.focos__list b{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.5rem,2.3vw,2rem);line-height:1}
+.focos__list span{color:var(--bone-3);font-size:.9375rem}
+@media (max-width:860px){
+  .focos__list{grid-template-columns:1fr 1fr}
+  .focos__list li{padding:18px 12px 20px 0;border-bottom:1px solid var(--line)}
+  .focos__list li:nth-child(2n){border-right:0;padding-left:14px}
+  .focos__list li:nth-child(2n+1){padding-left:0}
+}
+.combate{margin-top:clamp(56px,8vw,96px);position:relative;border-radius:6px;overflow:clip;background:var(--bone);color:var(--rubber);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.combate__txt{padding:clamp(28px,5vw,64px)}
+.combate h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(2.5rem,5.4vw,4.75rem);line-height:.88;margin:0}
+.combate .en{font-family:var(--f-stamp);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;margin-top:22px;color:#3d3b37}
+.combate p{margin-top:18px;max-width:42ch;color:#2a2926}
+.combate__mat{position:relative;background:var(--rubber);min-height:260px}
+.combate__mat svg{position:absolute;inset:0;width:100%;height:100%}
+@media (max-width:860px){.combate{grid-template-columns:1fr}.combate__mat{min-height:200px}}
+
+/* ---------- prova (placeholder) ---------- */
+.prova{padding:0 0 clamp(80px,10vw,136px)}
+.prova__slot{border:1px dashed var(--line-2);border-radius:6px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+.prova__slot p{color:var(--bone-3);max-width:60ch;font-size:.9375rem}
+
+/* ---------- contato ---------- */
+.contato{background:var(--rubber-2);border-top:1px solid var(--line)}
+.builder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(32px,5vw,80px);align-items:start}
+.builder form{display:grid;gap:30px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,.field-label{font-family:var(--f-stamp);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-3);margin-bottom:12px;padding:0}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg input,.chips input{position:absolute;opacity:0;pointer-events:none}
+.seg label{display:grid;gap:4px;padding:16px 18px;border:1px solid var(--line-2);border-radius:6px;cursor:pointer;transition:border-color 200ms ease,background-color 200ms ease,transform 140ms var(--ease-out)}
+.seg label:active,.chips label:active{transform:scale(.97)}
+.seg b{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.625rem;line-height:1}
+.seg small{color:var(--bone-3);font-size:.8125rem}
+.seg input:checked+label{border-color:var(--bone);background:var(--rubber-3)}
+.seg input:focus-visible+label,.chips input:focus-visible+label{outline:2px solid var(--bone);outline-offset:3px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line-2);border-radius:999px;cursor:pointer;font-weight:500;font-size:.9375rem;transition:border-color 200ms ease,background-color 200ms ease,color 200ms ease,transform 140ms var(--ease-out)}
+.chips input:checked+label{background:var(--bone);color:var(--rubber);border-color:var(--bone)}
+@media (hover:hover) and (pointer:fine){
+  .seg label:hover,.chips label:hover{border-color:var(--bone-2)}
+  .chips input:checked+label:hover{border-color:var(--bone)}
+}
+.input{width:100%;min-height:52px;padding:0 16px;background:var(--rubber);border:1px solid var(--line-2);border-radius:6px;color:var(--bone);font:500 16px/1 var(--f-body);caret-color:var(--bone);transition:border-color 200ms ease}
+.input::placeholder{color:var(--bone-3)}
+.input:focus{outline:0;border-color:var(--bone)}
+select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23ece8e0' stroke-width='1.6'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:44px}
+.gym-field{display:grid}
+.gym-field[hidden]{display:none}
+.ticket{position:sticky;top:96px;border:1px solid var(--line-2);border-radius:8px;background:var(--rubber);padding:clamp(22px,3vw,32px);display:grid;gap:20px}
+.ticket__msg{font-size:1.0625rem;line-height:1.55;color:var(--bone);min-height:6.5em;white-space:pre-line}
+.ticket__acts{display:grid;gap:12px}
+.ticket .btn{justify-content:center}
+.ticket__alt{font-size:.9375rem;color:var(--bone-3)}
+.ticket__alt a{color:var(--bone)}
+@media (max-width:900px){.builder{grid-template-columns:1fr}.ticket{position:relative;top:0}}
+
+/* ---------- footer ---------- */
+.foot{padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+.foot__in{display:grid;grid-template-columns:auto 1fr auto;gap:24px 40px;align-items:center}
+.foot svg.sh{width:44px;color:var(--bone)}
+.foot p{color:var(--bone-3);font-size:.875rem}
+.foot p strong{color:var(--bone);font-weight:600}
+.foot nav{display:flex;gap:20px;font-size:.9375rem}
+@media (max-width:700px){.foot__in{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .bar .pl,.bar .collar,.step__body,.js .reveal,.via__photo img{transition:none!important}
+  .step__body.is-swapping{filter:none;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="shield" viewBox="0 0 655 775.5"><path fill-rule="evenodd" fill="currentColor" d="M315.5 158.0 L307.5 162.5 L290.0 175.5 L290.0 587.5 L291.0 629.0 L301.5 638.0 L310.5 644.0 L316.0 646.5 L317.0 595.5 L317.5 341.5 L316.5 159.0Z M88.5 158.0 L87.5 247.5 L88.0 516.0 L146.5 556.0 L154.0 560.5 L155.5 560.5 L156.5 521.0 L156.5 304.5 L157.5 291.0 L159.5 290.5 L166.0 294.0 L233.5 339.0 L249.5 351.0 L257.5 356.0 L262.5 358.0 L263.5 352.5 L264.0 325.5 L263.0 287.5 L261.0 282.0 L254.5 275.5 L116.0 176.5Z M335.5 157.5 L334.0 170.0 L333.5 241.5 L334.0 638.5 L334.5 646.5 L336.5 647.0 L359.0 631.5 L360.0 626.5 L361.0 514.0 L360.5 177.0 L356.5 172.5Z M565.5 156.5 L555.0 162.5 L473.5 221.5 L440.0 244.5 L423.0 257.5 L400.0 272.5 L388.0 282.5 L388.0 346.5 L389.0 358.0 L392.0 357.0 L406.0 348.0 L484.5 294.0 L492.5 290.0 L495.0 290.5 L496.0 305.5 L496.0 530.0 L497.0 561.0 L560.0 519.5 L565.5 514.0Z M259.5 78.5 L315.5 114.0 L325.5 119.0 L329.5 118.0 L341.0 112.0 L394.5 79.0 L394.5 78.0 L380.5 71.5 L328.0 50.5 L324.0 50.5 L311.0 56.5 L294.5 62.5Z M325.0 0.0 L147.0 58.5 L145.0 58.5 L2.0 106.5 L1.0 110.0 L0.0 171.5 L1.0 484.5 L3.0 500.0 L7.0 517.5 L13.0 534.5 L25.0 557.5 L39.0 577.5 L54.0 595.0 L74.0 615.0 L110.0 646.0 L133.5 663.5 L178.5 694.0 L221.5 720.0 L259.0 741.0 L268.0 745.0 L316.5 771.0 L326.0 775.0 L329.5 775.0 L369.0 755.0 L429.5 722.0 L486.0 687.0 L530.5 656.0 L550.0 641.0 L574.5 620.0 L596.5 598.5 L618.5 573.0 L630.5 555.5 L637.5 543.0 L643.5 529.5 L650.5 507.5 L652.5 493.0 L653.5 470.0 L654.5 130.0 L654.0 107.5 L653.5 106.5 L516.0 61.5 L421.0 29.5 L415.5 28.5 L351.5 6.5 L331.5 0.5Z M326.5 13.5 L352.5 21.0 L559.5 90.0 L565.0 91.0 L602.5 104.0 L623.0 110.0 L635.5 115.0 L638.0 117.0 L638.0 459.5 L637.0 483.0 L635.0 497.5 L629.0 519.0 L622.0 535.5 L615.0 548.5 L605.0 563.0 L581.0 590.0 L568.5 602.5 L549.0 619.5 L515.5 645.5 L476.0 672.5 L432.5 699.5 L361.0 739.5 L327.5 755.5 L317.5 751.5 L295.5 740.5 L250.5 716.5 L202.0 687.5 L164.5 663.5 L138.5 645.5 L111.0 624.0 L82.0 599.0 L63.0 579.5 L48.5 561.5 L38.5 546.5 L28.5 527.5 L21.5 508.5 L16.5 482.5 L15.5 393.0 L15.5 225.5 L17.0 117.0 L19.0 115.0 L40.5 108.0 L41.5 107.0 L46.5 106.0 L144.5 73.0 L165.0 67.0 L169.0 65.0 L237.5 43.0 L298.5 22.0Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24s8.23 3.7 8.23 8.24-3.69 8.24-8.23 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".6" fill="currentColor"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <pattern id="knurl" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#9ea2a8"/><path d="M0 0v6M0 0h6" stroke="#5d6166" stroke-width="1.4"/></pattern>
+    <filter id="grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -.9 .42" result="g"/><feComposite in="g" in2="SourceGraphic" operator="in"/></filter>
+    <filter id="brushX" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".004 .75" numOctaves="2" seed="3" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 -.55" result="w"/><feComposite in="w" in2="SourceGraphic" operator="in" result="wi"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="wi"/></feMerge></filter>
+    <filter id="emboss" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="1.1" result="b"/><feSpecularLighting in="b" surfaceScale="2.4" specularConstant=".85" specularExponent="16" lighting-color="#fff" result="s"><feDistantLight azimuth="225" elevation="42"/></feSpecularLighting><feComposite in="s" in2="SourceAlpha" operator="in" result="si"/><feOffset in="SourceAlpha" dx="1.4" dy="1.8" result="o"/><feGaussianBlur in="o" stdDeviation="1.2" result="ob"/><feFlood flood-color="#000" flood-opacity=".8"/><feComposite in2="ob" operator="in" result="sh"/><feMerge><feMergeNode in="sh"/><feMergeNode in="SourceGraphic"/><feMergeNode in="si"/></feMerge></filter>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#topo" aria-label="Marcelo Hathy — início"><svg viewBox="0 0 655 775.5" aria-hidden="true"><use href="#shield"/></svg><span>Marcelo Hathy</span></a>
+    <nav class="nav__links" aria-label="Seções">
+      <a href="#metodo">Método</a>
+      <a href="#modalidades">Online e presencial</a>
+      <a href="#focos">Objetivos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn--solid" data-wa href="https://wa.me/554198241343" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero__grid">
+      <div>
+        <h1 id="h1" class="display">
+          <span class="l l1"><span>Eu não ensino motivação.</span></span>
+          <span class="l l2"><span>Ensino processo.</span></span>
+        </h1>
+        <p class="lede">Treinamento personalizado para quem busca resultado, performance e evolução contínua. Com método, disciplina e acompanhamento.</p>
+        <div class="hero__cta">
+          <a class="btn btn--solid" data-wa href="https://wa.me/554198241343" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero começar</a>
+          <a class="link-arrow" href="#metodo">Ver como funciona o método <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <dl class="hero__meta">
+          <div><dt>Online</dt><dd>Brasil, EUA e Canadá</dd></div>
+          <div><dt>Presencial</dt><dd>Curitiba, 3 academias</dd></div>
+          <div><dt>Registro</dt><dd>CREF 45.150-G</dd></div>
+        </dl>
+      </div>
+
+      <div class="plate-wrap" aria-hidden="true">
+        <svg class="plate" viewBox="-300 -300 600 600">
+          <defs>
+            <radialGradient id="rubFace" cx="-.2" cy="-.3" r="1.25"><stop offset="0" stop-color="#1e1e21"/><stop offset=".6" stop-color="#141416"/><stop offset="1" stop-color="#0d0d0e"/></radialGradient>
+          </defs>
+          <circle r="298" fill="url(#rubFace)"/>
+          <circle r="298" fill="#000" filter="url(#grain)" opacity=".38"/>
+          <circle r="291" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="2"/>
+          <circle r="219" fill="none" stroke="#000" stroke-opacity=".6" stroke-width="3"/>
+          <circle r="216" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="1.5"/>
+        </svg>
+        <div class="plate p-spin" id="spin">
+          <svg viewBox="-300 -300 600 600">
+            <defs><path id="rim" d="M0,-248 a248,248 0 1,1 0,496 a248,248 0 1,1 0,-496"/></defs>
+            <g filter="url(#emboss)">
+              <text font-family="Michroma, sans-serif" font-size="15.5" letter-spacing="5.2" fill="#9a968e"><textPath href="#rim">MÉTODO HATHY · STRENGTH &amp; CONDITIONING · CURITIBA · CREF 45.150-G · ONLINE BR · US · CA ·</textPath></text>
+              <use href="#shield" x="-44" y="-194" width="88" height="104" color="#d9d4ca"/>
+              <text y="178" text-anchor="middle" font-family="Michroma, sans-serif" font-size="13" letter-spacing="5" fill="#b5b0a7">MÉTODO HATHY</text>
+              <g class="num" font-family="'Big Shoulders Display', sans-serif" font-weight="900" font-size="80" fill="#d9d4ca" text-anchor="middle">
+                <text x="-152" y="28">20</text>
+                <text x="152" y="28">KG</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <svg class="plate p-hub" viewBox="-300 -300 600 600">
+          <defs>
+            <clipPath id="hubClip"><circle r="92"/></clipPath>
+            <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+            <radialGradient id="sheen" cx="-.35" cy="-.5" r=".95"><stop offset="0" stop-color="#fff" stop-opacity=".07"/><stop offset=".7" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle r="96" fill="#000" opacity=".55"/>
+          <g clip-path="url(#hubClip)">
+            <circle r="92" fill="#a4a8ae"/>
+            <g filter="url(#soft)" fill="#fff">
+              <path d="M0 0 L-120 -60 L-60 -120Z" opacity=".75"/>
+              <path d="M0 0 L120 60 L60 120Z" opacity=".45"/>
+            </g>
+            <g filter="url(#soft)" fill="#1c1d20">
+              <path d="M0 0 L120 -70 L70 -120Z" opacity=".45"/>
+              <path d="M0 0 L-120 70 L-70 120Z" opacity=".55"/>
+            </g>
+            <g fill="none" stroke-width=".9"><circle r="30.2" stroke="#fff" stroke-opacity="0.06"/><circle r="31.7" stroke="#fff" stroke-opacity="0.09"/><circle r="34.2" stroke="#000" stroke-opacity="0.08"/><circle r="36.0" stroke="#fff" stroke-opacity="0.13"/><circle r="38.3" stroke="#fff" stroke-opacity="0.08"/><circle r="40.3" stroke="#fff" stroke-opacity="0.06"/><circle r="41.8" stroke="#000" stroke-opacity="0.13"/><circle r="43.7" stroke="#000" stroke-opacity="0.07"/><circle r="46.0" stroke="#000" stroke-opacity="0.11"/><circle r="47.8" stroke="#000" stroke-opacity="0.05"/><circle r="49.6" stroke="#000" stroke-opacity="0.15"/><circle r="52.3" stroke="#000" stroke-opacity="0.07"/><circle r="53.9" stroke="#000" stroke-opacity="0.10"/><circle r="55.7" stroke="#000" stroke-opacity="0.07"/><circle r="57.7" stroke="#fff" stroke-opacity="0.07"/><circle r="60.0" stroke="#000" stroke-opacity="0.09"/><circle r="61.7" stroke="#000" stroke-opacity="0.11"/><circle r="63.9" stroke="#fff" stroke-opacity="0.12"/><circle r="65.8" stroke="#000" stroke-opacity="0.06"/><circle r="68.1" stroke="#000" stroke-opacity="0.08"/><circle r="69.7" stroke="#000" stroke-opacity="0.06"/><circle r="71.8" stroke="#fff" stroke-opacity="0.04"/><circle r="73.7" stroke="#fff" stroke-opacity="0.11"/><circle r="76.0" stroke="#000" stroke-opacity="0.15"/><circle r="78.3" stroke="#fff" stroke-opacity="0.04"/><circle r="79.6" stroke="#000" stroke-opacity="0.15"/><circle r="82.2" stroke="#fff" stroke-opacity="0.07"/><circle r="83.8" stroke="#fff" stroke-opacity="0.08"/><circle r="85.8" stroke="#000" stroke-opacity="0.05"/><circle r="87.9" stroke="#fff" stroke-opacity="0.06"/><circle r="90.0" stroke="#fff" stroke-opacity="0.03"/></g>
+          </g>
+          <circle r="92" fill="none" stroke="#000" stroke-opacity=".7" stroke-width="2"/>
+          <circle r="91" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width=".8"/>
+          <circle r="27" fill="#050506"/>
+          <circle r="27" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="1.2"/>
+          <circle r="298" fill="url(#sheen)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO (signature: the bar loads one plate per step) -->
+  <section class="metodo" id="metodo" aria-labelledby="h-metodo">
+    <div class="metodo__track" id="track">
+      <div class="metodo__pin">
+        <div class="wrap metodo__grid">
+          <div>
+            <h2 id="h-metodo" class="display">Método Hathy</h2>
+            <p class="metodo__intro">Processo é o que acontece entre o objetivo e o resultado. Cinco etapas, uma de cada vez, e a carga sobe junto com você.</p>
+
+            <div class="step" aria-live="polite">
+              <div class="step__body" id="stepBody">
+                <div class="step__count"><b id="stepN">01</b> / 05</div>
+                <h3 id="stepT">Avaliação</h3>
+                <p id="stepD">Tudo começa pelos seus objetivos e pela sua rotina. Uma avaliação completa define de onde partimos.</p>
+              </div>
+              <div class="ticks" role="group" aria-label="Etapas do método" id="ticks"></div>
+            </div>
+
+            <ol class="steps-static" id="stepsStatic"></ol>
+          </div>
+
+          <div class="bar" aria-hidden="true">
+            <svg viewBox="0 0 800 400" id="barSvg">
+              <defs>
+                <linearGradient id="fadeU" gradientUnits="userSpaceOnUse" x1="-40" y1="0" x2="200" y2="0"><stop offset="0" stop-color="#000"/><stop offset="1" stop-color="#fff"/></linearGradient>
+                <mask id="fadeMask" maskUnits="userSpaceOnUse" x="-60" y="0" width="900" height="400"><rect x="-60" y="0" width="900" height="400" fill="url(#fadeU)"/></mask>
+              </defs>
+              <line x1="0" y1="376" x2="800" y2="376" stroke="rgba(236,232,224,.12)"/>
+              <g mask="url(#fadeMask)">
+                <rect x="-40" y="192" width="310" height="16" fill="url(#knurl)"/>
+                <rect x="-40" y="192" width="310" height="3" fill="#fff" opacity=".35"/>
+                <rect x="-40" y="203" width="310" height="5" fill="#000" opacity=".35"/>
+              </g>
+              <g class="steel">
+                <rect x="268" y="176" width="16" height="48" rx="2" fill="#a4a8ae" filter="url(#brushX)"/>
+                <rect x="284" y="162" width="22" height="76" rx="3" fill="#b3b7bc" filter="url(#brushX)"/>
+                <rect x="306" y="182" width="474" height="36" rx="3" fill="#a4a8ae" filter="url(#brushX)"/>
+                <rect x="306" y="186" width="474" height="5" fill="#fff" opacity=".45"/>
+                <rect x="306" y="208" width="474" height="10" rx="3" fill="#000" opacity=".3"/>
+                <rect x="284" y="166" width="22" height="6" fill="#fff" opacity=".35"/>
+              </g>
+              <g id="plates"></g>
+              <g class="collar" id="collar">
+                <rect x="0" y="170" width="18" height="60" rx="3" fill="#26282c" stroke="#000" stroke-opacity=".7"/>
+                <rect x="1" y="173" width="16" height="4" fill="#fff" opacity=".18"/>
+                <rect x="18" y="186" width="10" height="28" rx="2" fill="#3c3f44"/>
+              </g>
+            </svg>
+            <div class="readout"><span class="stamp">Carga na barra</span><output id="kg">45</output><small>kg</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUAS VIAS -->
+  <section class="sec vias" id="modalidades" aria-labelledby="h-vias">
+    <div class="wrap">
+      <div class="sec__head">
+        <h2 id="h-vias" class="display">Dois jeitos de treinar comigo</h2>
+        <p class="lede">O método é o mesmo. Muda onde você está.</p>
+      </div>
+      <div class="vias__grid">
+        <article class="via">
+          <div>
+            <h3>Consultoria online</h3>
+            <p>Atendimento em todo o Brasil, nos Estados Unidos e no Canadá. Avaliação dos seus objetivos e da sua rotina, treino 100% personalizado, exercícios com orientação detalhada e suporte para dúvidas, com o acompanhamento pelo app MFit.</p>
+          </div>
+          <figure class="via__photo reveal" style="margin:0"><img src="img/marcelo-online.jpg" alt="Marcelo Hathy montando treinos no notebook" loading="lazy" width="588" height="1000"><span class="photo-note">Foto provisória</span></figure>
+          <a class="link-arrow" href="#contato" data-modo="online">Quero a consultoria online <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="via">
+          <div>
+            <h3>Presencial em Curitiba</h3>
+            <p>Treino acompanhado de perto, em uma destas academias:</p>
+            <ul class="gyms">
+              <li><b>Force One</b><span>Boa Vista</span></li>
+              <li><b>Fórum</b><span>Cabral</span></li>
+              <li><b>World Gym</b><span>São Lourenço</span></li>
+            </ul>
+          </div>
+          <figure class="via__photo reveal" style="margin:0"><img src="img/academia.jpg" alt="Área de musculação de academia" loading="lazy" width="628" height="776"><span class="photo-note">Foto provisória</span></figure>
+          <a class="link-arrow" href="#contato" data-modo="presencial">Quero treinar presencial <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCOS -->
+  <section class="sec focos" id="focos" aria-labelledby="h-focos">
+    <div class="wrap">
+      <div class="sec__head sec__head--stack">
+        <h2 id="h-focos" class="display">Cada aluno tem um objetivo</h2>
+        <p class="lede">Uma rotina e uma necessidade. Por isso o treino precisa ser individualizado, ajustado e acompanhado.</p>
+      </div>
+      <ul class="focos__list">
+        <li><b>Hipertrofia</b><span>Ganho de massa muscular</span></li>
+        <li><b>Emagrecimento</b><span>Perda de gordura com treino</span></li>
+        <li><b>Performance</b><span>Força e condicionamento</span></li>
+        <li><b>Qualidade de vida</b><span>Saúde para a rotina</span></li>
+      </ul>
+
+      <div class="combate">
+        <div class="combate__txt">
+          <h3>Jiu-Jitsu e esportes de combate</h3>
+          <div class="en">Strength and Conditioning for Combat Sports</div>
+          <p>A especialidade do Método Hathy: preparação física para quem luta. Força, condicionamento e resistência planejados em torno da sua rotina de treinos no tatame.</p>
+        </div>
+        <div class="combate__mat" aria-hidden="true">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <defs><pattern id="mat" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="#141416"/><path d="M0 0H100V100" fill="none" stroke="#050506" stroke-width="3"/><path d="M10 10h80v80h-80z" fill="none" stroke="#fff" stroke-opacity=".025"/></pattern></defs>
+            <rect width="400" height="300" fill="url(#mat)"/>
+            <use href="#shield" x="150" y="80" width="100" height="118" color="#ece8e0" opacity=".9"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA — placeholder until real material arrives -->
+  <section class="prova" aria-label="Resultados de alunos">
+    <div class="wrap">
+      <div class="prova__slot">
+        <p><strong style="color:var(--bone)">Espaço reservado:</strong> depoimentos e resultados de alunos. Aguardando material real do Marcelo; nada aqui será inventado.</p>
+        <a class="link-arrow" href="https://www.instagram.com/marcelohathy/" target="_blank" rel="noopener">Ver o dia a dia no Instagram <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="sec contato" id="contato" aria-labelledby="h-contato">
+    <div class="wrap">
+      <div class="sec__head sec__head--stack">
+        <h2 id="h-contato" class="display">Monte sua mensagem</h2>
+        <p class="lede">Três escolhas e a conversa já começa com o que importa.</p>
+      </div>
+      <div class="builder">
+        <form id="form" novalidate onsubmit="return false">
+          <fieldset>
+            <legend>Modalidade</legend>
+            <div class="seg">
+              <input type="radio" name="modo" id="m-on" value="online" checked><label for="m-on"><b>Online</b><small>Brasil, EUA e Canadá</small></label>
+              <input type="radio" name="modo" id="m-pr" value="presencial"><label for="m-pr"><b>Presencial</b><small>Curitiba</small></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Objetivo</legend>
+            <div class="chips">
+              <input type="radio" name="obj" id="o1" value="hipertrofia" checked><label class="chip" for="o1">Hipertrofia</label>
+              <input type="radio" name="obj" id="o2" value="emagrecimento"><label class="chip" for="o2">Emagrecimento</label>
+              <input type="radio" name="obj" id="o3" value="performance"><label class="chip" for="o3">Performance</label>
+              <input type="radio" name="obj" id="o4" value="qualidade de vida"><label class="chip" for="o4">Qualidade de vida</label>
+              <input type="radio" name="obj" id="o5" value="Jiu-Jitsu / esportes de combate"><label class="chip" for="o5">Jiu-Jitsu e combate</label>
+            </div>
+          </fieldset>
+          <div class="gym-field" id="gymField" hidden>
+            <label class="field-label" for="gym">Academia</label>
+            <select class="input" id="gym">
+              <option value="Force One (Boa Vista)">Force One · Boa Vista</option>
+              <option value="Fórum (Cabral)">Fórum · Cabral</option>
+              <option value="World Gym (São Lourenço)">World Gym · São Lourenço</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="nome" style="display:block">Seu nome</label>
+            <input class="input" id="nome" type="text" autocomplete="given-name" placeholder="Como você se chama?" enterkeyhint="done">
+          </div>
+        </form>
+
+        <aside class="ticket" aria-labelledby="t-lbl">
+          <div class="stamp" id="t-lbl">Sua mensagem</div>
+          <p class="ticket__msg" id="msg"></p>
+          <div class="ticket__acts">
+            <a class="btn btn--solid" id="send" data-wa href="https://wa.me/554198241343" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar no WhatsApp</a>
+            <p class="ticket__alt">Prefere o Instagram? <a href="https://ig.me/m/marcelohathy" target="_blank" rel="noopener">Mande um direct para @marcelohathy</a></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <svg class="sh" viewBox="0 0 655 775.5" aria-hidden="true"><use href="#shield"/></svg>
+    <p><strong>Marcelo Hathy</strong>, Personal Trainer · CREF 45.150-G<br>#MétodoHathy · Online para Brasil, EUA e Canadá · Presencial em Curitiba</p>
+    <nav aria-label="Redes">
+      <a class="link-arrow" href="https://www.instagram.com/marcelohathy/" target="_blank" rel="noopener"><svg aria-hidden="true" style="width:20px;height:20px"><use href="#i-ig"/></svg>@marcelohathy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const WA = '554198241343';
+  const root = document.documentElement;
+  root.classList.add('js');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ---------- método data (from Marcelo's own "o que você recebe" post) ---------- */
+  const STEPS = [
+    {t:'Avaliação', d:'Tudo começa pelos seus objetivos e pela sua rotina. Uma avaliação completa define de onde partimos.', kg:25, h:340, w:58},
+    {t:'Planejamento', d:'Treino 100% personalizado, com foco definido: hipertrofia, emagrecimento, performance, qualidade de vida ou esportes de combate.', kg:20, h:340, w:48},
+    {t:'Execução orientada', d:'Cada exercício chega com orientação detalhada pelo app MFit, onde o acompanhamento acontece.', kg:15, h:340, w:40},
+    {t:'Suporte', d:'Dúvidas não esperam a próxima avaliação: você tem suporte durante todo o processo.', kg:10, h:300, w:30},
+    {t:'Ajustes', d:'O treino muda conforme você evolui. A carga sobe quando você está pronto, não antes.', kg:5, h:210, w:22},
+  ];
+  const BAR = 20;
+
+  // build plates
+  const NS = 'http://www.w3.org/2000/svg';
+  const g = document.getElementById('plates');
+  let x = 308; const xs = [];
+  STEPS.forEach((s, i) => {
+    const p = document.createElementNS(NS, 'g');
+    p.setAttribute('class', 'pl');
+    p.style.transform = 'translateX(' + (560 - x) + 'px)';
+    const y = 200 - s.h / 2;
+    const r = ' x="' + x + '" y="' + y + '" width="' + s.w + '" height="' + s.h + '" rx="7"';
+    p.innerHTML =
+      '<rect' + r + ' fill="#2a2a2f"/>' +
+      '<rect' + r + ' fill="#000" filter="url(#grain)" opacity=".35"/>' +
+      '<rect x="' + (x + 2) + '" y="' + (y + 4) + '" width="3" height="' + (s.h - 8) + '" fill="#fff" opacity=".16"/>' +
+      '<rect x="' + (x + s.w - 6) + '" y="' + (y + 4) + '" width="4" height="' + (s.h - 8) + '" fill="#000" opacity=".45"/>' +
+      '<rect' + r + ' fill="none" stroke="#000" stroke-opacity=".85"/>' +
+      '<text filter="url(#emboss)" x="' + (x + s.w / 2 - 1) + '" y="' + (y + 32) + '" text-anchor="middle" font-family="Big Shoulders Display, sans-serif" font-weight="800" font-size="' + Math.min(22, s.w * .55) + '" fill="#d9d4ca">' + s.kg + '</text>';
+    g.appendChild(p);
+    xs.push(x + s.w);
+    x += s.w + 2;
+  });
+  const plates = [...g.children];
+  const barSvg = document.getElementById('barSvg');
+  const mqNarrow = matchMedia('(max-width: 900px)');
+  const setVB = () => barSvg.setAttribute('viewBox', mqNarrow.matches ? '190 10 610 380' : '0 0 800 400');
+  setVB(); mqNarrow.addEventListener?.('change', setVB);
+  const collar = document.getElementById('collar');
+
+  // ticks + static list
+  const ticks = document.getElementById('ticks');
+  const list = document.getElementById('stepsStatic');
+  STEPS.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Etapa ' + (i + 1) + ': ' + s.t);
+    b.innerHTML = '<i></i>';
+    b.addEventListener('click', () => goStep(i));
+    ticks.appendChild(b);
+    const li = document.createElement('li');
+    li.innerHTML = '<h3>' + String(i + 1).padStart(2, '0') + ' · ' + s.t + '</h3><p>' + s.d + '</p>';
+    list.appendChild(li);
+  });
+
+  const track = document.getElementById('track');
+  const metodo = document.getElementById('metodo');
+  const stepBody = document.getElementById('stepBody');
+  const stepN = document.getElementById('stepN'), stepT = document.getElementById('stepT'), stepD = document.getElementById('stepD');
+  const kgOut = document.getElementById('kg');
+  let active = -1, kgShown = BAR, kgRaf = 0;
+
+  function setLoad(n) { // n plates loaded (0..5)
+    plates.forEach((p, i) => p.classList.toggle('on', i < n));
+    const edge = n ? xs[n - 1] + 2 : 308;
+    collar.style.transform = 'translateX(' + edge + 'px)';
+    const target = BAR + 2 * STEPS.slice(0, n).reduce((a, s) => a + s.kg, 0);
+    animateKg(target);
+  }
+  function animateKg(to) {
+    cancelAnimationFrame(kgRaf);
+    if (reduce.matches) { kgShown = to; kgOut.textContent = to; return; }
+    const from = kgShown, t0 = performance.now(), dur = 520;
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+      kgShown = Math.round(from + (to - from) * e);
+      kgOut.textContent = kgShown;
+      if (k < 1) kgRaf = requestAnimationFrame(tick);
+    };
+    kgRaf = requestAnimationFrame(tick);
+  }
+  let swapTimer;
+  function setActive(i) {
+    if (i === active) return;
+    const first = active === -1;
+    active = i;
+    [...ticks.children].forEach((b, j) => { b.classList.toggle('is-on', j <= i); b.classList.toggle('is-current', j === i); b.setAttribute('aria-current', j === i ? 'step' : 'false'); });
+    setLoad(i + 1);
+    const s = STEPS[i];
+    const write = () => { stepN.textContent = String(i + 1).padStart(2, '0'); stepT.textContent = s.t; stepD.textContent = s.d; };
+    if (first || reduce.matches) { write(); return; }
+    clearTimeout(swapTimer);
+    stepBody.classList.add('is-swapping');
+    swapTimer = setTimeout(() => { write(); stepBody.classList.remove('is-swapping'); }, 170);
+  }
+  function goStep(i) {
+    const r = track.getBoundingClientRect();
+    const span = track.offsetHeight - innerHeight;
+    const top = scrollY + r.top + span * ((i + .5) / STEPS.length);
+    scrollTo({ top, behavior: reduce.matches ? 'auto' : 'smooth' });
+  }
+
+  function applyMode() {
+    if (reduce.matches) { root.classList.add('static'); setActive(STEPS.length - 1); }
+    else root.classList.remove('static');
+  }
+  applyMode();
+  reduce.addEventListener?.('change', () => { applyMode(); onScroll(); });
+
+  /* ---------- scroll loop (one rAF, transform-only writes) ---------- */
+  const spin = document.getElementById('spin');
+  const nav = document.getElementById('nav');
+  let ticking = false;
+  function frame() {
+    ticking = false;
+    const y = scrollY;
+    nav.classList.toggle('is-solid', y > 24);
+    if (!reduce.matches) {
+      const rot = 'rotate(' + (y * .09).toFixed(2) + 'deg)';
+      spin.style.transform = rot;
+      const r = track.getBoundingClientRect();
+      const span = track.offsetHeight - innerHeight;
+      const p = Math.min(.9999, Math.max(0, -r.top / span));
+      setActive(Math.floor(p * STEPS.length));
+    }
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  if (active === -1) setActive(0);
+  frame();
+
+  /* ---------- image reveals ---------- */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduce.matches) {
+    reveals.forEach(el => el.classList.add('pending'));
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.remove('pending'); io.unobserve(e.target); }
+    }), { rootMargin: '0px 0px -12% 0px' });
+    reveals.forEach(el => io.observe(el));
+  }
+
+  /* ---------- WhatsApp message builder ---------- */
+  const form = document.getElementById('form');
+  const msg = document.getElementById('msg');
+  const gymField = document.getElementById('gymField');
+  const waLinks = document.querySelectorAll('[data-wa]');
+  function build() {
+    const modo = form.modo.value, obj = form.obj.value;
+    const nome = document.getElementById('nome').value.trim();
+    const gym = document.getElementById('gym').value;
+    gymField.hidden = modo !== 'presencial';
+    const hi = nome ? 'Olá, Marcelo! Aqui é ' + nome + '.' : 'Olá, Marcelo!';
+    const onde = modo === 'online' ? 'na consultoria online' : 'no treino presencial na ' + gym;
+    const text = hi + '\nTenho interesse ' + onde + ', com foco em ' + obj + '.\nVi o Método Hathy no seu site e quero entender como começar.';
+    msg.textContent = text;
+    const href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+    document.getElementById('send').href = href;
+    return text;
+  }
+  form.addEventListener('input', build);
+  form.addEventListener('change', build);
+  build();
+  // generic WhatsApp buttons get a short default message
+  const generic = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Olá, Marcelo! Vi o Método Hathy no seu site e quero saber mais.');
+  waLinks.forEach(a => { if (a.id !== 'send') a.href = generic; });
+  // "quero online/presencial" links preselect the builder
+  document.querySelectorAll('[data-modo]').forEach(a => a.addEventListener('click', () => {
+    const r = document.getElementById(a.dataset.modo === 'online' ? 'm-on' : 'm-pr');
+    r.checked = true; build();
+  }));
+})();
+</script>
+
+</body>
+</html>
