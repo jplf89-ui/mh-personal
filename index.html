@@ -192,8 +192,8 @@ section{position:relative}
 .via{padding:clamp(28px,4vw,48px) 0 0;display:grid;align-content:start;gap:28px}
 .via+.via{border-left:1px solid var(--line);padding-left:clamp(24px,4vw,56px)}
 .via:first-child{padding-right:clamp(24px,4vw,56px)}
-.via__photo{position:relative;aspect-ratio:5/4;overflow:clip;border-radius:4px;background:var(--rubber-3)}
-.via__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transition:transform 1400ms var(--ease-out)}
+.via__photo{position:relative;aspect-ratio:4/5;overflow:clip;border-radius:4px;background:var(--rubber-3)}
+.via__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1400ms var(--ease-out)}
 .reveal{clip-path:inset(0 0 0 0)}
 .js .reveal.pending{clip-path:inset(0 0 100% 0)}
 .js .reveal.pending img{transform:scale(1.12)}
@@ -205,7 +205,6 @@ section{position:relative}
 .gyms li:last-child{border-bottom:1px solid var(--line)}
 .gyms b{font-weight:600}
 .gyms span{font-family:var(--f-stamp);font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-3);white-space:nowrap}
-.photo-note{position:absolute;left:10px;bottom:10px;font-family:var(--f-stamp);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;background:rgba(11,11,12,.8);padding:6px 9px;border-radius:3px;color:var(--bone-2)}
 @media (max-width:860px){
   .vias__grid{grid-template-columns:1fr}
   .via+.via{border-left:0;padding-left:0;border-top:1px solid var(--line);margin-top:56px}
@@ -465,7 +464,7 @@ select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xml
             <h3>Consultoria online</h3>
             <p>Atendimento em todo o Brasil, nos Estados Unidos e no Canadá. Avaliação dos seus objetivos e da sua rotina, treino 100% personalizado, exercícios com orientação detalhada e suporte para dúvidas, com o acompanhamento pelo app MFit.</p>
           </div>
-          <figure class="via__photo reveal" style="margin:0"><img src="img/marcelo-online.jpg" alt="Marcelo Hathy montando treinos no notebook" loading="lazy" width="588" height="1000"><span class="photo-note">Foto provisória</span></figure>
+          <figure class="via__photo reveal" style="margin:0"><img src="img/marcelo-online.jpg" alt="Marcelo Hathy com a camiseta do Método Hathy" loading="lazy" width="853" height="1066"></figure>
           <a class="link-arrow" href="#contato" data-modo="online">Quero a consultoria online <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
         <article class="via">
@@ -478,7 +477,7 @@ select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xml
               <li><b>World Gym</b><span>São Lourenço</span></li>
             </ul>
           </div>
-          <figure class="via__photo reveal" style="margin:0"><img src="img/academia.jpg" alt="Área de musculação de academia" loading="lazy" width="628" height="776"><span class="photo-note">Foto provisória</span></figure>
+          <figure class="via__photo reveal" style="margin:0"><img src="img/academia.jpg" alt="Marcelo Hathy orientando uma aluna na academia" loading="lazy" width="880" height="1100"></figure>
           <a class="link-arrow" href="#contato" data-modo="presencial">Quero treinar presencial <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
       </div>
